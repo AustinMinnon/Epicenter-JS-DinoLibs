@@ -1,5 +1,4 @@
-$(document).ready(function() {
-    var getDinos = $.get('http://dinoipsum.herokuapp.com/api/?format=html&paragraphs=3'),
+  var getDinos = $.get('http://dinoipsum.herokuapp.com/api/?format=html&paragraphs=3'),
     fillContainer = function(html) {
       $('#some-awesome-container').html(html);
     },
@@ -10,4 +9,3 @@ $(document).ready(function() {
     getDinos.then(fillContainer, oops);
     event.preventDefault();
   });
-});
