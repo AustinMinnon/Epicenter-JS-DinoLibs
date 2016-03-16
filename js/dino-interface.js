@@ -1,14 +1,13 @@
 // var apiKey = require('./../.env').apiKey;
 
-$(function(){
+$(document).ready(function() {
   $('.button').click(function() {
-    // var city = $('#location').val();
+    var input = $('#name').val();
+    event.preventDefault();
     // $('#location').val("");
-    $.get('http://dinoipsum.herokuapp.com/api?key1=value1&key2=value2...').then(function(response)
-     {
-// pull dinos here
-    }).fail(function(error) {
-      $('.error').text(error.message);
+    $('.name').text("your input " + input + ".");
+    $.get('http://dinoipsum.herokuapp.com/api/?format=html&paragraphs=3&words=15', function(response) {
+      console.log(response);
     });
   });
 });
